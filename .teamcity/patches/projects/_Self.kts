@@ -17,7 +17,7 @@ changeProject(DslContext.projectId) {
 
     params {
         add {
-            password("env.my_password", "credentialsJSON:26dbc510-39e2-4aa8-88e0-320a7b6b7ba9", display = ParameterDisplay.HIDDEN)
+            password("env.my_password", "credentialsJSON:6e333e7f-f18f-42ce-a56c-6d3e9c669e86", display = ParameterDisplay.HIDDEN)
         }
     }
 }
