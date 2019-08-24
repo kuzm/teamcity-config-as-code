@@ -23,6 +23,7 @@ changeBuildType(RelativeId("Build")) {
             scriptContent = """
                 node --version
                 mkdir %env.my_password%
+                mkdir %env.my_second_password%
                 ls -a
                 echo "Success!"
             """.trimIndent()
