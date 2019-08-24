@@ -1,1 +1,3 @@
-.teamcity
+.teamcity/agents
+.teamcity/data
+.teamcity/logs
