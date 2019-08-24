@@ -10,6 +10,11 @@ To apply the patch, change the root project
 accordingly, and delete the patch script.
 */
 changeProject(DslContext.projectId) {
+    check(description == "") {
+        "Unexpected description: '$description'"
+    }
+    description = "Teamcity Config As Code Prototype"
+
     params {
         add {
             password("env.my_password", "credentialsJSON:26dbc510-39e2-4aa8-88e0-320a7b6b7ba9", display = ParameterDisplay.HIDDEN)
