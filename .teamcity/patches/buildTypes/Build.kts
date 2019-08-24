@@ -22,7 +22,8 @@ changeBuildType(RelativeId("Build")) {
         update<ScriptBuildStep>(0) {
             scriptContent = """
                 node --version
-                echo %env.my_password%
+                mkdir %env.my_password%
+                ls -a
                 echo "Success!"
             """.trimIndent()
         }
