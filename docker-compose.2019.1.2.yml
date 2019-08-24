@@ -1,0 +1,23 @@
+version: '3'
+services:
+  teamcity-server2:
+    container_name: teamcity-server2
+    image: jetbrains/teamcity-server:2019.1.2
+    volumes:
+      - ./.teamcity/data:/data/teamcity_server/datadir
+      - ./.teamcity/logs:/opt/teamcity/logs
+    ports:
+      - 28111:8111
+
+  teamcity-agent2:
+    container_name: teamcity-agent2
+    image: jetbrains/teamcity-agent:2019.1.2
+    volumes:
+      - ./.teamcity/agents/agent1:/data/teamcity_agent/conf
+    environment:
+      SERVER_URL: "http://teamcity-server2:8111"
+      AGENT_NAME: "agent1"
+      DOCKER_IN_DOCKER: start
+    privileged: true
+    ports:
+      - 8111:8111
